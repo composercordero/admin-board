@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root{
+    --blue: #0e92d6 ;
+    --yellow:#ffd119;
+    --gray: #e3e9f1;
+    --radius: 25px;
+    --radius2: 10px; 
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+* {
+    /* border: red solid 1px; */
+    box-sizing: border-box;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
+h1, p {
+    margin: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 4fr;
+    grid-template-rows: 200px 1fr;
+    grid-template-areas: 
+    "menu   header"
+    "menu   main";
+    height: 100vh;
+}
+
+.left{
+    background-color: var(--blue);
+    color: white;
+    font-weight: 900;
+    padding: 30px;
+    grid-area: menu;
+}
+
+.left li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.icon{
+    height: 20px;
+    filter: invert(100%);
+}
+
+.icon2{
+    height: 20px;
+    filter: invert(20%);
+}
+
+.notification{
+    display:grid;
+    grid-area: notification;
+    justify-content: end;
+    align-items: center;
+    margin-right: 20px;
+}
+
+ul{
+    padding: 0;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid rgb(255, 255, 255, 0.3) 0.1rem;
+}
+
+.list{
+    list-style: none;
+}
+
+.header{
+    display: grid;
+    box-shadow: 0 5px rgb(0 0 0 / 0.2);
+    grid-template-columns: 3fr repeat(2, 1fr);
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "search notification user"
+        "social button button";
+    padding: 20px;
+}
+
+.search{
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+[type="search"]{
+    background-color: var(--gray);
+    border-radius: var(--radius);
+    border: none;
+    padding-left: 10px;
+}
+
+.user{
+    align-items: center;
+}
+
+.username{
+    grid-area: user;
+    display: flex;
+}
+
+.avatar{
+    border-radius: 50%;
+    height: 50px;
+    grid-area: avatar;
+}
+
+.avatar-two{
+    border-radius: 50%;
+    height: 100px;
+    grid-area: avatar;
+}
+
+
+.title-user{
+    grid-area: social;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-areas: 
+        "avatar welcome"
+        "avatar profile"
+    ;
+}
+
+.welcome{
+    grid-area: welcome;
+}
+
+.profile{
+    grid-area: profile;
+}
+
+.buttons{
+    grid-area: button;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.action{
+    background-color: var(--blue);
+    border-radius: var(--radius);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+}
+
+.main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: var(--gray);
+    grid-template-areas: "projects sidebar";
+}
+
+.projects{
+    padding: 20px;
+    display: grid;
+    grid-template-rows:ß 1fr;
+    grid-template-areas: "title" "layout";
+}
+
+.title{
+    grid-area: title;
+}
+
+.layout{
+    grid-area: layout;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: var(--gray);
+    padding: 20px;
+}
+
+.messages, .card{
+    background-color: white;
+    border-radius: var(--radius2);
+    padding: 20px;
+}
+
+.card{
+    border-left: solid 10px var(--yellow);
+}
